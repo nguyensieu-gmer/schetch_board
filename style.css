@@ -1,0 +1,96 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600;700&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --header-height: 3.5rem;
+
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    /* Màu nhấn chính – vàng nâu cổ / ánh kim mờ */
+    --first-color: hsl(32, 45%, 52%);        /* vàng nâu cổ */
+    --first-color-alt: hsl(32, 40%, 46%);    /* đậm hơn để hover */
+    /* Tiêu đề – nâu rất đậm, không trắng tinh */
+    --title-color: hsl(30, 20%, 18%);        /* nâu gần đen */
+    /* Chữ nội dung */
+    --text-color: hsl(30, 15%, 30%);         /* nâu trung tính */
+    --text-color-light: hsl(30, 12%, 42%);   /* nâu nhạt cho mô tả */
+    /* Màu đen ấm (không phải đen gắt) */
+    --black-color: hsl(28, 25%, 8%);
+    /* Nền trang – giấy cũ / vải canvas */
+    --body-color: hsl(36, 30%, 92%);         /* beige rất nhạt */
+    /* Container – nổi nhẹ như tranh treo */
+    --container-color: hsl(34, 25%, 88%);    /* tối hơn nền chút */
+
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Montserrat", sans-serif;
+    --second-font: "Dancing Script", cursive;
+    --biggest-font-size: 3rem;
+    --bigger-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+
+    /*========== Font weight ==========*/
+    --font-regular: 400;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+button {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+body {
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+button {
+    border: none;
+    outline: none;
+}
+
+h1, h2, h3, h4 {
+    color: var(--title-color);
+    font-weight: var(--font-bold);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.item {
+    flex-grow: 1;
+    flex-basis: auto;
+}
