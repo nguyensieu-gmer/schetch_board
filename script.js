@@ -54,7 +54,7 @@ defaultBlack.addEventListener("mousedown", () => {
     defaultBlack.classList.add("hoverring");
   }
   rainbowCheck = false;
-  inputColor = "black";
+  inputColor = inputColor;
 });
 
 clear.addEventListener("mousedown", () => {
