@@ -16,36 +16,40 @@ let eraseOn = false;
 
 makeGrid(16);
 
-erase.addEventListener("mousedown", () => {
+erase.addEventListener("click", () => {
   eraseOn = !eraseOn;
+  defaultOn = false;
+  defaultBlack.classList.remove("hoverring");
+  rainbowOn = false;
+  rainbow.classList.remove("hoverring");
   if (eraseOn){
     erase.classList.add("hoverring");
-  }
-  else{
-    erase.classList.remove("hoverring");
   }
   rainbowCheck = false;
   inputColor = "white";
 });
 
-rainbow.addEventListener("mousedown", () => {
+rainbow.addEventListener("click", () => {
   rainbowOn = !rainbowOn;
+  defaultOn = false;
+  defaultBlack.classList.remove("hoverring");
+  eraseOn = false;
+  erase.classList.remove("hoverring");
   if (rainbowOn){
     rainbow.classList.add("hoverring");
-  }
-  else {
-    rainbow.classList.remove("hoverring");
   }
   rainbowCheck = true;
 });
 
 defaultBlack.addEventListener("mousedown", () => {
   defaultOn = !defaultOn;
+
+  eraseOn = false;
+  erase.classList.remove("hoverring");
+  rainbowOn = false;
+  rainbow.classList.remove("hoverring");
   if (defaultOn){
     defaultBlack.classList.add("hoverring");
-  }
-  else{
-    defaultBlack.classList.remove("hoverring");
   }
   rainbowCheck = false;
   inputColor = "black";
