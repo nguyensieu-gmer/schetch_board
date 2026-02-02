@@ -7,12 +7,12 @@ let defaultBlack = document.getElementById("defaultBlack");
 let erase = document.getElementById("erase");
 let clear = document.getElementById("clear");
 
-let rainbowCheck = false;
 let inputRange = 16;
 let inputColor = "black";
 let defaultOn = true;
 let rainbowOn = false;
 let eraseOn = false;
+let hover = false;
 
 makeGrid(16);
 
@@ -27,8 +27,6 @@ erase.addEventListener("click", () => {
   if (eraseOn){
     erase.classList.add("hoverring");
   }
-  rainbowCheck = false;
-  inputColor = "white";
 });
 
 rainbow.addEventListener("click", () => {
@@ -40,7 +38,6 @@ rainbow.addEventListener("click", () => {
   if (rainbowOn){
     rainbow.classList.add("hoverring");
   }
-  rainbowCheck = true;
 });
 
 defaultBlack.addEventListener("click", () => {
@@ -53,8 +50,6 @@ defaultBlack.addEventListener("click", () => {
   if (defaultOn){
     defaultBlack.classList.add("hoverring");
   }
-  rainbowCheck = false;
-  inputColor = inputColor;
 });
 
 clear.addEventListener("click", () => {
@@ -67,7 +62,8 @@ slider.addEventListener("input", () => {
   makeGrid(inputRange);
 });
 
-colorOption.addEventListener("input", () => {
+// remainder listener
+colorOption.addEventListener("input", () => { 
   inputColor = colorOption.value;
 });
 
@@ -84,17 +80,17 @@ function makeGrid(size){
 
 grid.addEventListener("mousedown", e => {
   if (e.target.classList.contains("item")){
-    if (rainbowCheck){
+    if (rainbowOn){
       e.target.style.backgroundColor = randomColor();
     }
+    else if (defaultOn){
+      e.target.style.backgroundColor = colorOption.value;
+    }
     else{
-      e.target.style.backgroundColor = inputColor;
+      e.target.style.backgroundColor = "white";
     }
   }
-
 });
-
-let hover = false;
 
 grid.addEventListener("mousedown", (e) =>{
   if (e.button === 0) hover = true;
@@ -103,11 +99,14 @@ grid.addEventListener("mouseup", () => hover = false);
 
 grid.addEventListener("mouseover", e => {
   if (hover && e.target.classList.contains("item")){
-    if (rainbowCheck){
+    if (rainbowOn){
       e.target.style.backgroundColor = randomColor();
     }
-    else {
-      e.target.style.backgroundColor = inputColor;
+    else if (defaultOn){
+      e.target.style.backgroundColor = colorOption.value;
+    }
+    else{
+      e.target.style.backgroundColor = "white";
     }
   }
 });
