@@ -150,7 +150,7 @@ img {
     box-shadow: 1px 1px 10px 3px var(--text-color);
 }
 
-.hoverring{
+.control .hoverring{
     background-color: var(--text-color-light);
     box-shadow: 1px 1px 10px 3px var(--text-color);
 }

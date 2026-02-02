@@ -29,16 +29,30 @@ erase.addEventListener("mousedown", () => {
 });
 
 rainbow.addEventListener("mousedown", () => {
+  rainbowOn = !rainbowOn;
+  if (rainbowOn){
+    rainbow.classList.add("hoverring");
+  }
+  else {
+    rainbow.classList.remove("hoverring");
+  }
   rainbowCheck = true;
+});
+
+defaultBlack.addEventListener("mousedown", () => {
+  defaultOn = !defaultOn;
+  if (defaultOn){
+    defaultBlack.classList.add("hoverring");
+  }
+  else{
+    defaultBlack.classList.remove("hoverring");
+  }
+  rainbowCheck = false;
+  inputColor = "black";
 });
 
 clear.addEventListener("mousedown", () => {
   makeGrid(inputRange);
-});
-
-defaultBlack.addEventListener("mousedown", () => {
-  rainbowCheck = false;
-  inputColor = "black";
 });
 
 slider.addEventListener("input", () => {
