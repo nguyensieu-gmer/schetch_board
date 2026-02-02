@@ -10,11 +10,13 @@ let clear = document.getElementById("clear");
 let rainbowCheck = false;
 let inputRange = 16;
 let inputColor = "black";
-let defaultOn = false;
+let defaultOn = true;
 let rainbowOn = false;
 let eraseOn = false;
 
 makeGrid(16);
+
+defaultBlack.classList.add("hoverring");
 
 erase.addEventListener("click", () => {
   eraseOn = !eraseOn;
