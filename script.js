@@ -43,7 +43,7 @@ rainbow.addEventListener("click", () => {
   rainbowCheck = true;
 });
 
-defaultBlack.addEventListener("mousedown", () => {
+defaultBlack.addEventListener("click", () => {
   defaultOn = !defaultOn;
 
   eraseOn = false;
@@ -57,7 +57,7 @@ defaultBlack.addEventListener("mousedown", () => {
   inputColor = inputColor;
 });
 
-clear.addEventListener("mousedown", () => {
+clear.addEventListener("click", () => {
   makeGrid(inputRange);
 });
 
