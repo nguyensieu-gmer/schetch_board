@@ -149,6 +149,20 @@ img {
     cursor: pointer;
 }
 
+.gridSize{
+    text-align: center;
+}
+
+.control .sliderItems .slider {
+    -webkit-appearance: none; /* Chrome, Safari */
+    appearance: none;
+    width: 200px;
+    height: 10px;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
 /* main */
 
 .main{
