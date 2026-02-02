@@ -8,18 +8,19 @@ let erase = document.getElementById("erase");
 let clear = document.getElementById("clear");
 
 let inputRange = 16;
-let inputColor = "black";
 let defaultOn = true;
 let rainbowOn = false;
 let eraseOn = false;
 let hover = false;
 
+colorOption.value = "black";
 makeGrid(16);
 
 defaultBlack.classList.add("hoverring");
 
 erase.addEventListener("click", () => {
-  eraseOn = !eraseOn;
+  eraseOn = true;
+
   defaultOn = false;
   defaultBlack.classList.remove("hoverring");
   rainbowOn = false;
@@ -30,7 +31,8 @@ erase.addEventListener("click", () => {
 });
 
 rainbow.addEventListener("click", () => {
-  rainbowOn = !rainbowOn;
+  rainbowOn = true;
+
   defaultOn = false;
   defaultBlack.classList.remove("hoverring");
   eraseOn = false;
@@ -41,7 +43,7 @@ rainbow.addEventListener("click", () => {
 });
 
 defaultBlack.addEventListener("click", () => {
-  defaultOn = !defaultOn;
+  defaultOn = true;
 
   eraseOn = false;
   erase.classList.remove("hoverring");
@@ -60,11 +62,6 @@ slider.addEventListener("input", () => {
   gridSize.textContent = `${slider.value}X${slider.value}`;
   inputRange = Number(slider.value);
   makeGrid(inputRange);
-});
-
-// remainder listener
-colorOption.addEventListener("input", () => { 
-  inputColor = colorOption.value;
 });
 
 function makeGrid(size){
