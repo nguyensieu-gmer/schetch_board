@@ -107,7 +107,7 @@ img {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 400px;
+    height: 500px;
     width: 200px;
     box-sizing: 0px 0px 10px 10px rgba(0, 0, 0, 0.533);
 }
@@ -134,7 +134,6 @@ img {
 }
 
 .control .btn{
-    border: 2px solid var(--first-color);
     width: 150px;
     height: 40px;
     background-color: var(--first-color);
@@ -143,6 +142,17 @@ img {
     font-weight: bold;
     color: var(--body-color);
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.533);
+    transition: 0.3s ease;
+}
+
+.control .btn:hover{
+    background-color: var(--text-color-light);
+    box-shadow: 1px 1px 10px 3px var(--text-color);
+}
+
+.hoverring{
+    background-color: var(--text-color-light);
+    box-shadow: 1px 1px 10px 3px var(--text-color);
 }
 
 .control .btn:hover{
@@ -170,15 +180,23 @@ img {
     width: 600px;
 }
 
+.main .title{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .main .grid{
     background-color: white;
     width: 600px;
     height: 600px;
     flex-shrink: 0;
     box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.506);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px;
+    align-content: stretch;
 }
 
-.main .title{
-    text-align: center;
-    margin-bottom: 20px;
+.main .grid .item{
+    border: 0.1px solid rgba(114, 114, 114, 0.098);
 }
