@@ -171,10 +171,11 @@ img {
 }
 
 .main .grid{
-    background-color: var(--first-color);
+    background-color: white;
     width: 600px;
     height: 600px;
     flex-shrink: 0;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.506);
 }
 
 .main .title{
